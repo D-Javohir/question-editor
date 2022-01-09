@@ -1,0 +1,109 @@
+body {
+    background: rgb(235, 233, 233);
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.Header {
+    width: 100%;
+    padding: 14px 7%;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    background: #FFF;
+    margin: 0;
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+.Header .nav2{
+    display: none !important;
+}
+.Header nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center !important;
+}
+
+.Header nav img {
+    width: 222px;
+}
+
+.Header nav input {
+    display: block;
+    width: 250px;
+margin-top: -14px;
+    padding: 0.5941rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #0D2E69;
+    background-color: #f6f6f8;
+    background-clip: padding-box;
+    border: 0 solid #CED3D9;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Header nav i {
+    margin-left: -30px;
+    margin-top: -15px;
+
+}
+
+.Header nav button {
+    font-size: 1rem;
+    padding: 5px 20px;
+    border-radius: 8px;
+
+}
+
+@media only screen and (max-width:1300px) {
+    .Header {
+
+        padding: 5px 4%;
+    }
+
+}
+
+@media only screen and (max-width:992px) {
+   .Header .nav1 {
+        display: none !important;
+    }
+   .Header .nav2{
+        display: block !important;
+    }
+    .Header .nav2 ul{
+        display: flex;
+        width: 100%;
+        padding: 10px 30px ;
+        justify-content: space-around;
+    }
+    .Header .nav2 ul .link{
+        list-style: none;
+        text-decoration: none;
+        color: #28a745 !important;
+        padding: 6px 0;
+        border: 2px solid transparent;
+        transition:0.30s ease-in;
+        font-size: 15px;
+    }
+    .Header .nav2 ul .link:hover{
+        border-top:2px solid #28a745 ;
+        border-bottom:2px solid #28a745 ;
+        transition:0.70s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    }
+    
+}
+.inactive{
+    border-top:2px solid #28a745 ;
+    border-bottom:2px solid #28a745 ;
+    transition:0.30s linear;
+    list-style: none !important;
+    text-decoration: none !important;
+    color: #28a745 !important;
+    padding: 5px 0;
+    font-size: 15px;
+   
+    
+}

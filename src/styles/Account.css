@@ -1,0 +1,78 @@
+.accontmenu{
+ width: 20%;
+ height: 100vh;
+ position: sticky;
+ position: -webkit-sticky;
+ top: 0;
+ background:#fff;
+ margin: 0;
+ padding-top: 100px;
+ display: flex;
+ justify-content: right;
+
+ 
+}
+.accontmenu ul li{
+    
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin: 15px 0;
+}
+.accontmenu ul{
+    float: right !important;
+    padding-right: 10px;
+}
+.accontmenu ul li:hover{
+    color: #28a745;
+}
+.accontmenu ul .link{
+    color: #898DA6;
+    text-decoration: none;
+    list-style: none;
+}
+/* ///////////////////////// */
+.inactive{
+   color: #28a745 !important;
+}
+
+@media only screen and (max-width:1300px) {
+    .accontmenu ul li{
+       
+        font-size: 15px;
+       
+    }
+}
+@media only screen and (max-width:992px) {
+    /* .accontmenu ul li{
+        color: #898DA6;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin: 15px 0;
+    } */
+    .accontmenu{
+        width: 0;
+        overflow-x: hidden;
+       }
+       
+}
+/* @media only screen and (max-width: 992px){
+    .accontmenu{
+        width: 0;
+        height: 100vh;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        background:#fff;
+        margin: 0;
+        padding-top: 100px;
+        display: flex;
+        justify-content: right;
+        padding-right: 15px;
+        
+       }
+       .accounactive{
+           width: 20%;
+       }
+} */

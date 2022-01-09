@@ -1,0 +1,31 @@
+.Main{
+    width: 100%;
+    height: 88vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 68px;
+    padding-top: 37px;
+    flex-wrap: wrap;
+}
+.Main img{
+    width: 500px;
+   
+}
+.Main .Main_text h1{
+    font-size: 40px;
+    color: #0D2E69;
+    font-weight: 600;
+}
+
+.Main .Main_text{
+    width: 35%;
+}
+.Main_text p{
+    font-size: 17px;
+    color: #898da8;
+    font-weight: 500;
+    margin: 20px 0;
+
+}

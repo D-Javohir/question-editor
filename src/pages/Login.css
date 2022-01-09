@@ -1,0 +1,22 @@
+.form{
+ margin-top: 10%;
+ width: 50%;
+}
+.form {
+  flex-direction: column;
+}
+
+.form input {
+  display: inline-block;
+}
+
+.form button {
+  display: block;
+  margin:20px auto;
+}
+@media only screen and (max-width:501px){
+  .form{
+    margin-top: 10%;
+    width: 90%;
+   }
+}
