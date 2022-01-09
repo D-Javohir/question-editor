@@ -3,11 +3,12 @@ import axios from 'axios';
 import { API_URL } from '../helpers/api'
 import ReactPhoneInput from "react-phone-input-2";
 import './Login.css'
+import { useNavigate } from 'react-router-dom';
 
 
 
-const Login = ({ setprofile }) => {
-
+const Login = () => {
+    const Navigate =useNavigate()
     const [phoneuz, setPhoneuz] = useState('');
     const [pasword, setPasword] = useState();
     const [load, setLoad] = useState(false);
@@ -23,7 +24,7 @@ const Login = ({ setprofile }) => {
             .then(res => {
                 const token = res.data.access_token
                 localStorage.setItem('token', token)
-                setprofile(true)
+               Navigate('/')
                 setLoad(false)
             })
             .catch(er => {

@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import _ from "lodash"
 import Header from '../component/Header';
 import AccountMenu from "../component/AccountMenu";
 import WordSave from "../Mathresul/WordSave"
-const SavolJavob = ({setprofile}) => {
+const SavolJavob = () => {
+    
     // savol api object
     const [savol, setSavol] = useState([])
     const [answer, setAnswer] = useState([])
@@ -16,6 +18,8 @@ const SavolJavob = ({setprofile}) => {
     const [erorBlok, setErorBlok]=useState(false)
     // tokenn
     const token = localStorage.getItem('token')
+    //navigate
+    const navigate= useNavigate()
     // UseEffects 
     useEffect(() => {
         SavolAPI()
@@ -33,13 +37,10 @@ const SavolJavob = ({setprofile}) => {
             setSavol(res.data.data.vquestions);
             setLoading(false)
             if (res.message==="Unauthenticated.") {
-                setprofile(false)
-
+               navigate('/login')
             }
         })
             .catch(err => {
-                setprofile(false)
-
                setErorBlok(true)
                setLoading(false)
             })

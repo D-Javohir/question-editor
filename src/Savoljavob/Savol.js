@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import TinyEditorComponent from '../Mathresul/WordClone';
 import WordSave from '../Mathresul/WordSave';
 // import { AiOutlinePlus } from "@react-icons/all-files/fa/AiOutlinePlus";
@@ -9,7 +9,10 @@ import Header from '../component/Header';
 import AccountMenu from '../component/AccountMenu';
 import axios from 'axios';
 
-const Savol = ({ profile, setprofile }) => {
+import { useNavigate } from 'react-router-dom';
+
+const Savol = () => {
+    
     const [activ, setActiv] = useState(1);
     const [value, setValue] = useState('')
 
@@ -70,12 +73,16 @@ const Savol = ({ profile, setprofile }) => {
     const [eror, setEror] = useState(false)
     const [erorBlok, setErorBlok] = useState(false)
 
+
+    //navigate 
+    const Navigate= useNavigate()
     ////////////////////////////////////// EDITOR //////////////////////////////////////////
 
 
     ////////////////////////////QUEST////////////////////
     //ADD quest
 
+   
 
     const AxiosPost = () => {
         let b = true
@@ -376,9 +383,10 @@ const Savol = ({ profile, setprofile }) => {
         AxiosGEt()
     }, [])
 
+   
     const AxiosGEt = () => {
         const token = localStorage.getItem('token')
-
+        setLoad(true)
         axios.get('https://api.qtlms.uz/api/v1/teacher/courses/357/sections/11919/lessons/8825/questions', {
 
             headers: {
@@ -390,14 +398,14 @@ const Savol = ({ profile, setprofile }) => {
                 setQuest(_.get(res, 'data.data', []))
                 setLoad(false)
                 if (res.data.status === 0) {
-                    setprofile(false)
+                   Navigate('/login')
                 }
             })
             .catch(ress => {
                 setErorBlok(true)
                 setLoad(false)
             })
-        setLoad(true)
+
     }
 
 
@@ -410,7 +418,7 @@ const Savol = ({ profile, setprofile }) => {
 
                 {erorBlok === true ? <div className='erorblok'><div>
                     <h2>Internet bilan muomo! Internetga ulanib qaytadan harakat qiling!</h2>
-                    <button className='btn btn-success' onClick={() => {window.location = window.location.href}}>Ok</button>
+                    <button className='btn btn-success' onClick={() => { window.location = window.location.href }}>Ok</button>
                 </div></div> : <div></div>}
 
                 {/* ======write errror blopk================ */}
