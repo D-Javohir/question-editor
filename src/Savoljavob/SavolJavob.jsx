@@ -6,7 +6,7 @@ import Header from '../component/Header';
 import AccountMenu from "../component/AccountMenu";
 import WordSave from "../Mathresul/WordSave"
 const SavolJavob = () => {
-    
+
     // savol api object
     const [savol, setSavol] = useState([])
     const [answer, setAnswer] = useState([])
@@ -228,6 +228,8 @@ const SavolJavob = () => {
             </div>
 
         </div>
+        
+
 
     </>);
 }
