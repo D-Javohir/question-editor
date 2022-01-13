@@ -157,7 +157,7 @@ const SavolJavob = () => {
         <div className="blok">
             <Header />
             {erorBlok === true ? <div className='erorblok'><div>
-                    <h2>Internet bilan muomo! Internetga ulanib qaytadan harakat qiling!</h2>
+                    <h2>xatolik yuz berdi! saytni qaytadan yuklang! </h2>
                     <button className='btn btn-success' onClick={() => {window.location = window.location.href}}>Ok</button>
                 </div></div> : <div></div>}
 
@@ -172,10 +172,11 @@ const SavolJavob = () => {
 
                         {loading === true ? <div className="modalLoader"><div className="loader-03"></div></div> : <div></div>}
 
-                        {error === 1 ? <div className="modalLoader flex-column">
+                        {error === 1 ? <div style={{width:'100%', position:'fixed', top:'40%', left:'50%'}}>
+                             <div className="modalLoader flex-column">
                             <h2 className="text-danger">Test yeching</h2>
                             <button onClick={() => setError(0)} className="btn btn-success">Ok</button>
-                        </div> : <div> </div>}
+                        </div> </div> : <div> </div>}
 
                         {savol.map((item, index) => {
                             indexs++;

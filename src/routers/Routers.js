@@ -15,8 +15,8 @@ const Routers = () => {
         tokenREzes()
     }, [])
     const tokenREzes = () => {
-        if (!localStorage.getItem('token')) {
-        
+
+        if (!localStorage.getItem('token')){
             navigate('/login')
         }else{
             navigate('/')
@@ -32,10 +32,6 @@ const Routers = () => {
                 <Route path={'/unsplash'} element={<Unsplash />} />
                 <Route path={'/savoljavob'} element={<SavolJavob/>} />
             </Routes>
-     
-          
-
-     
 
     </>)
 }
