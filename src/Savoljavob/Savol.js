@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import TinyEditorComponent from '../Mathresul/WordClone';
 import WordSave from '../Mathresul/WordSave';
 // import { AiOutlinePlus } from "@react-icons/all-files/fa/AiOutlinePlus";
@@ -12,7 +12,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Savol = () => {
-    
+
     const [activ, setActiv] = useState(1);
     const [value, setValue] = useState('')
 
@@ -75,14 +75,14 @@ const Savol = () => {
 
 
     //navigate 
-    const Navigate= useNavigate()
+    const Navigate = useNavigate()
     ////////////////////////////////////// EDITOR //////////////////////////////////////////
 
 
     ////////////////////////////QUEST////////////////////
     //ADD quest
 
-   
+
 
     const AxiosPost = () => {
         let b = true
@@ -383,7 +383,7 @@ const Savol = () => {
         AxiosGEt()
     }, [])
 
-   
+
     const AxiosGEt = () => {
         const token = localStorage.getItem('token')
         setLoad(true)
@@ -398,7 +398,7 @@ const Savol = () => {
                 setQuest(_.get(res, 'data.data', []))
                 setLoad(false)
                 if (res.data.status === 0) {
-                   Navigate('/login')
+                    Navigate('/login')
                 }
             })
             .catch(ress => {
@@ -417,14 +417,14 @@ const Savol = () => {
                 <AccountMenu />
 
                 {erorBlok === true ? <div className='erorblok'><div>
-                    <h2>Internet bilan muomo! Internetga ulanib qaytadan harakat qiling!</h2>
+                    <h2>Internet bilan yoki Xatolik yuz berdi! Qaytadan Xarakat qiling!</h2>
                     <button className='btn btn-success' onClick={() => { window.location = window.location.href }}>Ok</button>
                 </div></div> : <div></div>}
 
                 {/* ======write errror blopk================ */}
                 {eror === true ? <div className='erorblok'><div>
                     <h2>Internet bilan muomo! Internetga ulanib qaytadan harakat qiling!</h2>
-                    <button className='btn btn-success' onClick={() => { setEror(false); setAnsLoad(false) }}>Ok</button>
+                    <button className='btn btn-success' onClick={() => { setEror(false); setAnsLoad(false);window.location = window.location.href }}>Ok</button>
                 </div></div> : <div></div>}
                 <div className="main_savol">
                     {
@@ -583,16 +583,22 @@ const Savol = () => {
                                         <div className="text_p " key={index}>
                                             <div className='d-flex justify-content-between'>
                                                 <span className='savolindex'>{index + 1}- savol</span>
-                                                <span
-                                                    onClick={() => DeleteQuestion(index, item.id)}
-                                                    className='text-danger'><i className="fas fa-trash-alt"></i></span>
-                                                <span className='float-right align-text-top text-success'
-                                                    onClick={() => {
-                                                        setEditIndexx(index); setEditIndex(item.lesson_id); setId(item.id); setActiv(3);
-                                                        setNewvalue(item.question); setQuestionBall(item.score);
-                                                        setType(item.type)
-                                                    }}>
-                                                    <a ><i className="fas fa-pen"></i></a></span>
+                                                <div>
+                                                    <span
+                                                        onClick={() => DeleteQuestion(index, item.id)}
+                                                        className='text-danger mr-2'><i className="fas fa-trash-alt"></i>
+                                                    </span>
+
+                                                    <span className='float-right align-text-top text-success'
+                                                        onClick={() => {
+                                                            setEditIndexx(index); setEditIndex(item.lesson_id); setId(item.id); setActiv(3);
+                                                            setNewvalue(item.question); setQuestionBall(item.score);
+                                                            setType(item.type)
+                                                        }}>
+                                                        <a ><i className="fas fa-pen"></i></a>
+                                                    </span>
+                                                </div>
+
 
                                             </div>
 
@@ -614,7 +620,7 @@ const Savol = () => {
                                                             <div className=' d-flex justify-content-between'>
                                                                 <span className='javobindex'>{inde + 1}- javob</span>
 
-                                                                <span className='float-right  text-success'
+                                                                <span className='float-right  text-success '
                                                                     onClick={() => {
 
                                                                         setqID(ite.question_id)
@@ -626,7 +632,7 @@ const Savol = () => {
                                                                         setAnswerBall(ite.score);
                                                                     }}>
 
-                                                                    <a><i className="fas fa-pen"></i></a></span>
+                                                                    <a className='ansicon'><i className="fas fa-pen"></i></a></span>
 
                                                             </div>
                                                             <p className='pp'><WordSave text={ite.answer} /></p>
@@ -637,7 +643,7 @@ const Savol = () => {
                                                                 <span className='ball'>{ite.score}</span>
 
                                                                 <span
-                                                                    className='float-right text-danger cursor-pointer'
+                                                                    className='float-right text-danger cursor-pointer ansicon'
                                                                     onClick={() => AnswerDelete(index, inde, ite.question_id, ite.id)}
                                                                 >   <i className="fas fa-trash-alt"></i>
                                                                 </span>

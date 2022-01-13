@@ -48,8 +48,9 @@ const SavolJavob = () => {
 
 
     // Answer ppost 
+    let arr = []
     const AnswerPost = (quesId, AnsId, type) => {
-        let arr = []
+    
         let b = true
         let k = true
 
@@ -57,13 +58,12 @@ const SavolJavob = () => {
         if (type === "single") {
 
             answer.forEach(item => {
-                if (item.question_id == quesId) {
+                if (item.question_id === quesId) {
                     b = false
                     arr.push({ question_id: quesId, answer_id: AnsId, type: type })
                 } else {
                     arr.push(item)
                 }
-
 
             })
             if (b) {
@@ -124,11 +124,6 @@ const SavolJavob = () => {
 
             }
 
-
-
-
-
-
         })
         console.log(answer);
 
@@ -157,7 +152,7 @@ const SavolJavob = () => {
         <div className="blok">
             <Header />
             {erorBlok === true ? <div className='erorblok'><div>
-                    <h2>xatolik yuz berdi! saytni qaytadan yuklang! </h2>
+                    <h2>Internet bilan Xatolik yuz berdi! Qaytadan harakat qiling! </h2>
                     <button className='btn btn-success' onClick={() => {window.location = window.location.href}}>Ok</button>
                 </div></div> : <div></div>}
 
@@ -172,7 +167,7 @@ const SavolJavob = () => {
 
                         {loading === true ? <div className="modalLoader"><div className="loader-03"></div></div> : <div></div>}
 
-                        {error === 1 ? <div style={{width:'100%', position:'fixed', top:'40%', left:'50%'}}>
+                        {error === 1 ? <div className="modalTest" style={{width:'100%', position:'fixed', top:'40%', left:'50%'}}>
                              <div className="modalLoader flex-column">
                             <h2 className="text-danger">Test yeching</h2>
                             <button onClick={() => setError(0)} className="btn btn-success">Ok</button>
