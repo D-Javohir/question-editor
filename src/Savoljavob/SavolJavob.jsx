@@ -5,6 +5,7 @@ import _ from "lodash"
 import Header from '../component/Header';
 import AccountMenu from "../component/AccountMenu";
 import WordSave from "../Mathresul/WordSave"
+import Unsplash from "../unsplash/Unsplash";
 const SavolJavob = () => {
 
     // savol api object
@@ -225,7 +226,7 @@ const SavolJavob = () => {
 
         </div>
         
-
+        
 
     </>);
 }

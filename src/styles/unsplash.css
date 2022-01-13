@@ -1,0 +1,31 @@
+.Forms button{
+    border: none;
+    background: cornflowerblue;
+    padding: 0px 10px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+.Forms button:focus{
+    border: 2px solid cornflowerblue;
+    background: transparent;
+   
+}
+.Forms .socials{
+    font-size: 25px;
+    margin-top: 16px;
+}
+.Forms .socials a i .fab{
+    color: cornflowerblue;
+}
+
+@media only screen and (max-width:576px) {
+    .Forms .socials i{
+        font-size: 25px !important;
+        color: cornflowerblue;
+        margin: 0 6px;
+    } 
+    .Forms h1 .fas{
+        font-size: 30px;
+    }
+    
+}

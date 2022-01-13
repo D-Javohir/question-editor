@@ -17,6 +17,13 @@ const Header = () => {
             icon: "far fa-file-alt",
             link: "/savoljavob"
         },
+        
+        {
+            id: 4,
+            name: "Search img",
+            icon: "far fa-image",
+            link: "/unsplash"
+        },
     ]
     return (
         <header className="Header">
@@ -36,7 +43,7 @@ const Header = () => {
 
                     {menu.map((item, index) => (
                         <NavLink exact className={({ isActive }) => (isActive ? 'inactive' : 'link')} to={item.link} key={index} >
-                            <li> <i className={item.icon}></i> {item.name}</li>
+                            <li className="headernavTsxt"> <i className={item.icon}></i> {item.name}</li>
                         </NavLink>
                     ))}
                 </ul>

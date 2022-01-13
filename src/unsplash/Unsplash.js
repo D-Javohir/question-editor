@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SRLWrapper } from "simple-react-lightbox";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import '../styles/unsplash.css'
 const Unsplash = () => {
     const [image, setImage] = useState('')
     const [develop, setDevelop] = useState([])
@@ -62,10 +63,15 @@ const Unsplash = () => {
         <SRLWrapper options={options}>
             <>
                 <div className="Forms">
-                    <h1>Search for Images</h1>
+                    <h1><i className="fas fa-camera-retro"></i> Search for Images</h1>
                     <input type="text" onChange={(e) => { setImage(e.target.value); setError(false) }} />
 
                     <button type="submit" onClick={() => { UnsplashApi(); setError(false) }}>search</button>
+                <div className="socials">
+                    <a href="https://www.instagram.com/javohir_off77/"> <i className="fab fa-instagram"></i></a>
+                    <a href="https://t.me/javohir_coder1"> <i className="fab fa-telegram"></i></a>
+                    <a href="https://github.com/javohirdev-stack"> <i className="fab fa-github"></i></a>
+                </div>
                 </div>
                 {error === true ? <div className="text-center pt-5 mt-5"><h3>Internetga ulanganligingizni tekshiring <small className="text-danger">Internetga ulanmagansz</small></h3></div> : <div></div>}
                 {load === true ?

@@ -16,6 +16,12 @@ const AccountMenu = () => {
             icon: "far fa-file-alt",
             link: "/savoljavob"
         },
+        {
+            id: 4,
+            name: "Search img",
+            icon: "far fa-image",
+            link: "/unsplash"
+        },
     ]
     return (<>
         <div className="accontmenu">
@@ -30,4 +36,5 @@ const AccountMenu = () => {
         </div>
     </>);
 }
+
 export default AccountMenu;
